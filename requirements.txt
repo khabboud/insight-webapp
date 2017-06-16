@@ -6,6 +6,7 @@ scikit-learn==0.18.1
 pandas==0.19.2 
 numpy==1.11.3 
 flask==0.12
+scipy==0.18.1
 
 
 
