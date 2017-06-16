@@ -5,8 +5,6 @@ from TweetModel import isGood
 #from .a_Model import ModelIt
 from flask import render_template
 from myFlask import app
-from sqlalchemy import create_engine
-from sqlalchemy_utils import database_exists, create_database
 import pandas as pd
 
 from flask import request

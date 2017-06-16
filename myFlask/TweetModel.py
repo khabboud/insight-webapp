@@ -6,9 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression as LR
 import json
 import pickle
-#import tweepy
 import pandas as pd
-#import sqlite3
 import os
 import json
 import sys
