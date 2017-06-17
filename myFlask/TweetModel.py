@@ -6,26 +6,21 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression as LR
 import json
 import pickle
+#import tweepy
 import pandas as pd
+#import sqlite3
 import os
 import json
 import sys
 import numpy as np
-import requests
 #from tweepy import OAuthHandler,AppAuthHandler
 #import matplotlib.pyplot as plt
 
 def isGood(user_input  = 'Default'):
     if user_input != 'Default':
-        # pkl_file = open('../static/modelMVP.pkl', 'rb')
-        # data1 = pickle.load(pkl_file)
-        # pkl_file.close()
-        with open('/tmp/modelMVP.pkl', 'wb') as f:
-            r = requests.get('https://github.com/khabboud/insight-webapp/raw/master/myFlask/modelMVP.pkl', stream=True)
-            for chunk in r:
-                f.write(chunk)
-        with open('/tmp/modelMVP.pkl', 'rb') as f:
-            data1 = pkl.load(f)
+        pkl_file = open('modelMVP.pkl', 'rb')
+        data1 = pickle.load(pkl_file)
+        pkl_file.close()
         model=data1['model']
         vectorizer=data1['featureMap']
         modelAccuracy=data1['Test_accuracy']
