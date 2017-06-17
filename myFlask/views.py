@@ -6,7 +6,6 @@ from TweetModel import isGood
 from flask import render_template
 from myFlask import app
 import pandas as pd
-
 from flask import request
 
 
@@ -19,24 +18,14 @@ def index():
        )
 
 
-
-
 @app.route('/input')
 def cesareans_input():
     return render_template("input.html")
 
 @app.route('/output')
 def output():
-    #pull 'birth_month' from input field and store it
-    user_tweet = request.args.get('birth_month')
-    #just select the Cesareans  from the birth dtabase for the month that the user inputs
-    #query = "SELECT index, attendant, birth_month FROM birth_data_table WHERE delivery_method='Cesarean' AND birth_month='%s'" % patient
-    #print query
-    #query_results=pd.read_sql_query(query,con)
-    #print query_results
-    #births = []
-    #for i in range(0,query_results.shape[0]):
-     #   births.append(dict(index=query_results.iloc[i]['index'], attendant=query_results.iloc[i]['attendant'], birth_month=query_results.iloc[i]['birth_month']))
+    #pull 'tweet' from input field and store it
+    user_tweet = request.args.get('tweet')
     spitTweet(user_tweet)
     the_result = isGood(user_tweet)
     if the_result[0]==0:
