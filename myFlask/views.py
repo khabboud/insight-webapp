@@ -13,9 +13,7 @@ from flask import request
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html",
-       title = 'Home', user = { 'nickname': 'Miguel' },
-       )
+    return render_template("input.html")
 
 
 @app.route('/input')
@@ -32,5 +30,7 @@ def output():
         output_res='Try another tweet, to increase favorability'
     else:
         output_res='Nice tweet! very likely to receive many likes.'
-    accu=round(the_result[1],3)*100
-    return render_template("output.html", the_result = output_res, the_accuracy=str(accu)+'%' )
+    accu=round(the_result[2],3)*100
+    pred=round(the_result[1],3)*100
+    return render_template("output.html", the_result = output_res, the_prediction=pred, the_accuracy=accu)
+#the_accuracy=str(accu)+'%'
