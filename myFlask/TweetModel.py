@@ -46,7 +46,7 @@ def isGood(user_input  = 'Default'):
         input_feature[n-1]=sentiment_input
         input_feature_sprc=sparse.csr_matrix(np.matrix(input_feature))
         modelAccuracy=LR_model.score(X_test,y_test)
-        return LR_model.predict(input_feature_sprc)[0], LR_model.predict_proba(input_feature_sprc), modelAccuracy
+        return LR_model.predict(input_feature_sprc)[0], LR_model.predict_proba(input_feature_sprc)[1], modelAccuracy
     else:
         return 'check your input!'
 
