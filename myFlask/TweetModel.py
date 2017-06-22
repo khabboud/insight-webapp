@@ -17,7 +17,7 @@ import sys
 import numpy as np
 #from tweepy import OAuthHandler,AppAuthHandler
 #import matplotlib.pyplot as plt
-
+import re 
 
 def CleanURL(twt):
     twt = re.sub(r"http\S+|\@\S+|t.co\S+|\d+", "",twt)
