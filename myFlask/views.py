@@ -32,5 +32,5 @@ def output():
         output_res='Nice tweet! very likely to receive many likes.'
     accu=round(the_result[2],3)*100
     pred=round(the_result[1],3)*100
-    return render_template("output.html", the_result = output_res, the_prediction=pred, the_accuracy=accu)
+    return render_template("output.html", the_result = output_res, the_prediction=str(pred)+'%', the_accuracy=str(accu)+'%')
 #the_accuracy=str(accu)+'%'
